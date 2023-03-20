@@ -3,10 +3,8 @@ function Xfun(id) {
     if(tmp=="" && tmp!="O"){
         document.getElementById(id).innerHTML = "X";
         Ofun();
-        if(judge()){
-            alert(`the ${judge()} player won`)
-            clearTheTable();
-        }
+        
+        
     }
 }
 function Ofun(){
@@ -21,8 +19,15 @@ function Ofun(){
     if(tdid){
         document.getElementById(tdid).innerHTML = "O";
     }
-    
-    console.log(judge());
+    if(judge()){
+        alert(`the ${judge()} player won`)
+        clearTheTable();
+    }
+    else if(cubeArr.length==0){
+        alert("the game is draw!")
+        clearTheTable();
+        return;
+    }    
 }
 function judge(){
     let correctPattern = [
