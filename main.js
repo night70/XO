@@ -8,7 +8,7 @@ function Xfun(id) {
     }
 }
 function Ofun(){
-    let arr = document.getElementsByTagName("td");
+    let arr = document.getElementsByClassName("tic");
     let cubeArr = [];
     for (let tag of arr) {
         if(tag.innerText!="X" && tag.innerText!="O"){
@@ -21,10 +21,15 @@ function Ofun(){
     }
     if(judge()){
         alert(`the ${judge()} player won`)
+        // if(judge() == "X"){
+        //     scoreBoard("win");
+        // }
+        // else scoreBoard("lose");
         clearTheTable();
     }
     else if(cubeArr.length==0){
         alert("the game is draw!")
+        // scoreBoard();
         clearTheTable();
         return;
     }    
@@ -40,7 +45,7 @@ function judge(){
         [2,5,8],
         [2,4,6],
     ];
-    let allCube = document.getElementsByTagName("td");
+    let allCube = document.getElementsByClassName("tic");
     // return allCube[0].innerText ;
     for (const way of correctPattern) {
         if(allCube[way[0]].innerText==allCube[way[1]].innerText && 
@@ -50,8 +55,28 @@ function judge(){
     }
 }
 function clearTheTable(){
-    let cleaner = document.getElementsByTagName('td');
+    let cleaner = document.getElementsByClassName('tic');
     for (const iterator of cleaner) {
         iterator.innerText = "";
     }
+}
+let gameRound = 0;
+function scoreBoard(status){
+    let gameRoundCell = document.getElementsById("gameRound");
+    let myScoreCell = document.getElementsById("myScore");
+    let computerScoreCell = document.getElementsById("computerScore");
+    gameRoundCell = gameRound++;
+    switch (status) {
+        case "win":
+            myScoreCell.innerHTML = "1"
+            break;
+        case "lose":
+            computerScoreCell.innerHTML = "1"
+            break;
+        default:
+            myScoreCell.innerHTML = "-";
+            computerScoreCell.innerHTML = "-";
+            break;
+    }
+    return
 }

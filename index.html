@@ -8,23 +8,38 @@
     <title>tic tac toe</title>
 </head>
 <body>
-    <table>
-        <tr>
-            <td onclick="Xfun('one')" id="one"></td>
-            <td onclick="Xfun('two')" id="two"></td>
-            <td onclick="Xfun('three')" id="three"></td>
-        </tr>
-        <tr>
-            <td onclick="Xfun('four')" id="four"></td>
-            <td onclick="Xfun('five')" id="five"></td>
-            <td onclick="Xfun('six')" id="six"></td>
-        </tr>
-        <tr>
-            <td onclick="Xfun('seven')" id="seven"></td>
-            <td onclick="Xfun('eight')" id="eight"></td>
-            <td onclick="Xfun('nine')" id="nine"></td>
-        </tr>
-    </table>
+    <div id="flex-box">
+        <table id="main">
+            <tr>
+                <td onclick="Xfun('one')" id="one" class="tic"></td>
+                <td onclick="Xfun('two')" id="two" class="tic"></td>
+                <td onclick="Xfun('three')" id="three" class="tic"></td>
+            </tr>
+            <tr>
+                <td onclick="Xfun('four')" id="four" class="tic"></td>
+                <td onclick="Xfun('five')" id="five" class="tic"></td>
+                <td onclick="Xfun('six')" id="six" class="tic"></td>
+            </tr>
+            <tr>
+                <td onclick="Xfun('seven')" id="seven" class="tic"></td>
+                <td onclick="Xfun('eight')" id="eight" class="tic"></td>
+                <td onclick="Xfun('nine')" id="nine" class="tic"></td>
+            </tr>
+        </table>
+        <table id="scoreBoard">
+            <caption>SCORE BOARD</caption>
+            <tr>
+                <th>#GAME</th>
+                <th>YOU</th>
+                <th>THE COMPUTER</th>
+            </tr>
+            <tr>
+                <td id="gameRound"></td>
+                <td id="myScore"></td>
+                <td id="computerScore"></td>
+            </tr>
+        </table>
+    </div>
 </body>
 <script src="main.js">
     
