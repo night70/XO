@@ -4,8 +4,8 @@ function Xfun(id) {
         document.getElementById(id).innerHTML = "X";
         Ofun();
         if(judge()){
+            alert(`the ${judge()} player won`)
             clearTheTable();
-            alert("some body win!")
         }
     }
 }
@@ -41,7 +41,7 @@ function judge(){
         if(allCube[way[0]].innerText==allCube[way[1]].innerText && 
             allCube[way[1]].innerText==allCube[way[2]].innerText &&
             allCube[way[0]].innerText!="")
-            return true;
+            return allCube[way[0]].innerText;
     }
 }
 function clearTheTable(){
